@@ -1,12 +1,29 @@
 <html>
   <style>
+    .no-margin {
+	margin: 0 0 0 0;
+    }
+    .block {
+	z-index: 1;
+	overflow-x: hidden;
+	position: fixed;
+    }
     .split {
+	top: 0;
 	height: 100%;
 	width: 50%;
 	position: fixed;
-	z-index: 1;
+    }
+    .top {
 	top: 0;
-	overflow-x: hidden;
+	height: calc(100% - 1.5em);
+	width: 100%;
+    }
+    .bottom {
+	height: 1.5em;
+	width: 100%;
+	bottom: 0;
+	margin: 0 0 0 8px;
     }
     .left {
 	left: 0;
@@ -15,9 +32,9 @@
 	right: 0;
     }
   </style>
-  <body>
+  <body class="no-margin">
     <!-- Add a placeholder for the Twitch embed -->
-    <div id="twitch-embed" class=""></div>
+    <div id="twitch-embed" class="block top"></div>
     <script src="https://embed.twitch.tv/embed/v1.js"></script>
     <script type="text/javascript">
       new Twitch.Embed("twitch-embed", {
@@ -37,6 +54,13 @@
       <ul>
 	<li>Course notes</li>
       </ul>
+    </div>-->
+    <div id="bottom-links" class="block bottom">
+      <a href="https://scicomp.aalto.fi/training/scip/intro-linux-aalto-computing/">Course page</a>
+      <a href="https://hackmd.io/@AaltoSciComp/IntroWinter2021">HackMD
+	- Chat+info</a>
+      "Link to material"
+      "Other link to material"
     </div>
   </body>
 </html>
